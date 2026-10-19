@@ -85,7 +85,7 @@
 <div class="wrap">
 
   <div class="disclosure">
-    <strong>Full disclosure:</strong> The owner, <strong>Deepak Kushwaha</strong>, and <strong>Abhishek Sahani Nishad</strong> are <strong>real people</strong> (marked Human staff, real photos). The other 9 team members on this page are <strong>fictional AI personas</strong> and their photos are <strong>AI-generated</strong> - those personas do not exist. The work in the AI profiles - app fixes, social media, posters, security watch, reports and backups - is the real work done for the business. Think of this as our team page, with honesty and a sense of humour.
+    <strong>Full disclosure:</strong> The owner (<strong>Deepak Kushwaha</strong>), the co-founder (<strong>Netra</strong>) and <strong>Abhishek Sahani Nishad</strong> are <strong>real people</strong> (marked Human staff, real photos). The other 9 team members on this page are <strong>fictional AI personas</strong> and their photos are <strong>AI-generated</strong> - those personas do not exist. The work in the AI profiles - app fixes, social media, posters, security watch, reports and backups - is the real work done for the business. Think of this as our team page, with honesty and a sense of humour.
   </div>
 
   <section class="company" id="company">
@@ -111,7 +111,7 @@
 
   <section id="team">
     <h2 class="section-title">The team</h2>
-    <p class="section-intro">The boss, one very real human tester, and nine fictional AI colleagues keeping the shop moving. Real people and AI personas are both labelled.</p>
+    <p class="section-intro">The boss, the co-founder, one very real human tester, and nine fictional AI colleagues keeping the shop moving. Real people and AI personas are both labelled.</p>
     <div id="members"></div>
   </section>
 
@@ -133,6 +133,10 @@ const team = [
     skills:["Running the Shop","CSC Services","Customer Care","Team Building"],
     open:"Not open to work - he is the work.",
     human:true, hasPhoto:true
+  },
+  {
+    id:"founder", name:"Netra", role:"Co-founder", shift:"",
+    human:true
   },
   {
     id:"netra", name:"Netra", role:"Team Manager", shift:"All shifts, always", dob:"19 January",
@@ -282,23 +286,19 @@ for (const m of team) {
       <div class="who">
         <h3>${m.name}</h3>
         <div class="role">${m.role}</div>
-        <div class="shift">${m.shift}</div>
+        ${m.shift ? `<div class="shift">${m.shift}</div>` : ``}
         ${m.dob ? `<div class="shift">DOB: ${m.dob}</div>` : ``}
         ${m.human
           ? `<span class="human-tag">HUMAN STAFF - REAL PERSON</span>`
           : `<span class="ai-tag">AI PERSONA - AI-GENERATED PHOTO</span>`}
       </div>
     </div>
-    <p class="headline">"${m.headline}"</p>
-    <div class="block-label">About</div>
-    <p>${m.bio}</p>
-    <div class="block-label">Personality</div>
-    <p class="personality">${m.personality}</p>
-    <div class="block-label">Experience</div>
-    <ul>${m.exp.map(e=>`<li>${e}</li>`).join('')}</ul>
-    <div class="block-label">Skills</div>
-    <div class="chips">${m.skills.map(s=>`<span class="chip">${s}</span>`).join('')}</div>
-    <div class="open-to">${m.open}</div>
+    ${m.headline ? `<p class="headline">"${m.headline}"</p>` : ``}
+    ${m.bio ? `<div class="block-label">About</div><p>${m.bio}</p>` : ``}
+    ${m.personality ? `<div class="block-label">Personality</div><p class="personality">${m.personality}</p>` : ``}
+    ${m.exp && m.exp.length ? `<div class="block-label">Experience</div><ul>${m.exp.map(e=>`<li>${e}</li>`).join('')}</ul>` : ``}
+    ${m.skills && m.skills.length ? `<div class="block-label">Skills</div><div class="chips">${m.skills.map(s=>`<span class="chip">${s}</span>`).join('')}</div>` : ``}
+    ${m.open ? `<div class="open-to">${m.open}</div>` : ``}
   `;
   container.appendChild(card);
 }
