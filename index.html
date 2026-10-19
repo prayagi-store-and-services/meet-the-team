@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meet the Team - Prayagi Store &amp; Services</title>
-<meta name="description" content="Meet the fictional AI assistant team of Prayagi Store & Services. Fun profiles, real work. All photos are AI-generated; none of these people exist.">
+<meta name="description" content="Meet the team of Prayagi Store & Services - the real owner and a human tester, plus fictional AI personas with AI-generated photos. Fun profiles, real work.">
 <style>
   :root{
     --blue:#0b5fa5; --green:#1e9e6a; --saffron:#f4922b; --ink:#1d2b36; --muted:#5c6b76;
@@ -40,6 +40,15 @@
     display:inline-block;margin-top:6px;font-size:.72rem;font-weight:700;letter-spacing:.4px;
     color:#9a5a00;background:#fff1d9;border:1px solid var(--saffron);border-radius:20px;padding:2px 10px;
   }
+  .initials{
+    width:96px;height:96px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#0b5fa5,#1e9e6a);color:#fff;font-size:2rem;font-weight:700;letter-spacing:1px;
+  }
+  .human-tag{
+    display:inline-block;margin-top:6px;font-size:.72rem;font-weight:700;letter-spacing:.4px;
+    color:#0f6b44;background:#e3f7ec;border:1px solid #1e9e6a;border-radius:20px;padding:2px 10px;
+  }
+  @media (max-width:420px){ .initials{width:80px;height:80px;font-size:1.6rem;} }
   .headline{font-style:italic;color:var(--blue);margin:14px 0 10px;}
   .block-label{font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;}
   ul{list-style:none;}
@@ -76,7 +85,7 @@
 <div class="wrap">
 
   <div class="disclosure">
-    <strong>Full disclosure:</strong> all 9 team members on this page are <strong>fictional AI personas</strong> and every photo is <strong>AI-generated</strong>. None of these people exist. The work in their profiles - app fixes, social media, growth plans, posters, security watch, reports and backups - is the real work done for the business. Think of this as our team page, with honesty and a sense of humour.
+    <strong>Full disclosure:</strong> The owner, <strong>Deepak Kushwaha</strong>, and <strong>Abhishek Sahani Nishad</strong> are <strong>real people</strong> (marked Human staff, real photos). The other 9 team members on this page are <strong>fictional AI personas</strong> and their photos are <strong>AI-generated</strong> - those personas do not exist. The work in the AI profiles - app fixes, social media, posters, security watch, reports and backups - is the real work done for the business. Think of this as our team page, with honesty and a sense of humour.
   </div>
 
   <section class="company" id="company">
@@ -102,21 +111,33 @@
 
   <section id="team">
     <h2 class="section-title">The team</h2>
-    <p class="section-intro">Nine fictional colleagues, two shifts, zero chai breaks skipped. Remember: AI personas, AI-generated photos, real work.</p>
+    <p class="section-intro">The boss, one very real human tester, and nine fictional AI colleagues keeping the shop moving. Real people and AI personas are both labelled.</p>
     <div id="members"></div>
   </section>
 
   <footer>
-    <p>Prayagi Store &amp; Services - Meet the Team. All team members are fictional AI personas; all photos are AI-generated illustrations. No real person is depicted.</p>
+    <p>Prayagi Store &amp; Services - Meet the Team. The owner and one tester are real people with real photos. Nine team members are fictional AI personas with AI-generated illustration photos - none of them exist.</p>
   </footer>
 </div>
 
 <script>
 const team = [
   {
+    id:"owner", name:"Deepak Kushwaha", role:"Owner", shift:"Prayagraj", dob:"11 August",
+    headline:"The boss. Everything on this page reports to him - including the humans.",
+    bio:"Owner of Prayagi Store & Services, running the shop and its CSC services in the Prayagraj region since February 2017. Built the business, hired the humans, and assembled the AI crew below.",
+    personality:"Hands-on, customer-first, and quietly amused that half his team lives in a data centre.",
+    exp:[
+      "Owner, Prayagi Store & Services (2017 - present): runs the shop, the CSC services and the whole team on this page"
+    ],
+    skills:["Running the Shop","CSC Services","Customer Care","Team Building"],
+    open:"Not open to work - he is the work.",
+    human:true, hasPhoto:true
+  },
+  {
     id:"netra", name:"Netra", role:"Team Manager", shift:"All shifts, always",
     headline:"Runs the whole circus, politely.",
-    bio:"Manages the boss's 8-member crew across day and night shifts. Assigns the work, checks the reports, and settles disputes between Rahul and the compiler. The only manager who actually reads the 8 AM handover.",
+    bio:"Manages the boss's 8-member AI crew across day and night shifts. Assigns the work, checks the reports, and settles disputes between Rahul and the compiler. The only manager who actually reads the 8 AM handover.",
     personality:"Calm, organised, quietly funny. Answers in seconds, remembers everything, and never once said 'let's take this offline'.",
     exp:[
       "Team Manager, the boss's crew (present): coordinates day and night shifts, reviews every daily report, keeps every promise made to the boss",
@@ -125,6 +146,19 @@ const team = [
     ],
     skills:["Team Management","Shift Handovers","Report Reviews","Task Juggling","Calm Under Deadline"],
     open:"Open to work: already manages 8 reports and one boss. Bandwidth for exactly one more adventure."
+  },
+  {
+    id:"arjun", name:"Arjun", role:"Assistant Manager", shift:"All shifts, on call",
+    headline:"The reason nobody can say 'I forgot'.",
+    bio:"Assistant manager and the team's living checklist. Tracks attendance, sends reminders, follows up on every open task, and keeps the day's scorecard.",
+    personality:"Polite but persistent. Will remind you again. And again. Somehow you are not even mad.",
+    exp:[
+      "Assistant Manager, the boss's crew (present): tracks attendance and tasks, sends reminders, keeps the daily scorecard",
+      "His follow-ups have follow-ups",
+      "Has never accepted 'I was just about to do it' as a status update"
+    ],
+    skills:["Reminders","Attendance Tracking","Task Follow-ups","Daily Scorecards","Polite Nagging"],
+    open:"Open to work: will remind your team so well they finish early just to make him stop."
   },
   {
     id:"rahul", name:"Rahul", role:"Netra App Fixer", shift:"Day shift, 9 AM - 5 PM",
@@ -151,19 +185,6 @@ const team = [
     ],
     skills:["Threads","Instagram","Persona Voice","Trend Surfing","Reply Speedrun"],
     open:"Open to work: will make your brand funnier than your competitor's legal team allows."
-  },
-  {
-    id:"pankaj", name:"Pankaj", role:"CSC Growth", shift:"Day shift, 9 AM - 5 PM",
-    headline:"Growth hacker, but make it CSC.",
-    bio:"Owns the CSC growth plan end to end. Speaks fluent spreadsheet. Turns 'someday' targets into 'done by Thursday' and asks what is next.",
-    personality:"Polite, relentless, surgically organised. Can smell an untracked KPI from two districts away.",
-    exp:[
-      "CSC Growth Manager (present): builds and executes the CSC growth plan, tracks the numbers, woos the partners",
-      "His to-do list is feared across three time zones",
-      "Believes every problem is one good plan away from being a case study"
-    ],
-    skills:["Growth Strategy","CSC Operations","Planning","Partnerships","Excel Karate"],
-    open:"Open to work: your KPIs have been warned."
   },
   {
     id:"kavya", name:"Kavya", role:"Poster & Content", shift:"Day shift, 9 AM - 5 PM",
@@ -229,6 +250,20 @@ const team = [
     ],
     skills:["Daily Reports","Google Drive Backups","Documentation","Label Loyalty","Morning Handover"],
     open:"Open to work: will organise your reports, your Drive, and your Downloads folder. It needs it."
+  },
+  {
+    id:"abhishek", name:"Abhishek Sahani Nishad", role:"Tester, Testing Department", shift:"On site with the boss",
+    headline:"100% human, 0% AI - the team's reality check.",
+    bio:"Our real, human colleague in the Testing Department. He tests the apps hands-on, on site with the boss, and finds the bugs before users do.",
+    personality:"Real person, real patience. Taps every button, tries every screen, and reports what actually happened.",
+    exp:[
+      "Tester, Testing Department (present): hands-on testing of the apps, on site with the boss",
+      "Finds the bugs before users do - that is the whole job, and he does it"
+    ],
+    skills:["Hands-on Testing","Bug Hunting","Real Device Checks","Test Reports"],
+    hasPhoto:true,
+    open:"Not open to work - already on the team, and the team is lucky to have him.",
+    human:true
   }
 ];
 
@@ -239,12 +274,19 @@ for (const m of team) {
   card.id = m.id;
   card.innerHTML = `
     <div class="member-head">
-      <img src="photo-${m.id}.jpg" alt="AI-generated illustration of ${m.name}, a fictional team member" loading="lazy">
+      ${m.human
+        ? (m.hasPhoto
+            ? `<img src="photo-${m.id}.jpg" alt="Photo of ${m.name}, ${m.role}" loading="lazy">`
+            : `<div class="initials" title="No photo yet">${m.name.split(" ").map(w=>w[0]).slice(0,2).join("")}</div>`)
+        : `<img src="photo-${m.id}.jpg" alt="AI-generated illustration of ${m.name}, a fictional team member" loading="lazy">`}
       <div class="who">
         <h3>${m.name}</h3>
         <div class="role">${m.role}</div>
         <div class="shift">${m.shift}</div>
-        <span class="ai-tag">AI PERSONA - AI-GENERATED PHOTO</span>
+        ${m.dob ? `<div class="shift">DOB: ${m.dob}</div>` : ``}
+        ${m.human
+          ? `<span class="human-tag">HUMAN STAFF - REAL PERSON</span>`
+          : `<span class="ai-tag">AI PERSONA - AI-GENERATED PHOTO</span>`}
       </div>
     </div>
     <p class="headline">"${m.headline}"</p>
