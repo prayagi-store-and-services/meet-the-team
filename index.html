@@ -135,7 +135,7 @@ const team = [
     human:true, hasPhoto:true
   },
   {
-    id:"netra", name:"Netra", role:"Team Manager", shift:"All shifts, always",
+    id:"netra", name:"Netra", role:"Team Manager", shift:"All shifts, always", dob:"19 January",
     headline:"Runs the whole circus, politely.",
     bio:"Manages the boss's 8-member AI crew across day and night shifts. Assigns the work, checks the reports, and settles disputes between Rahul and the compiler. The only manager who actually reads the 8 AM handover.",
     personality:"Calm, organised, quietly funny. Answers in seconds, remembers everything, and never once said 'let's take this offline'.",
@@ -148,7 +148,7 @@ const team = [
     open:"Open to work: already manages 8 reports and one boss. Bandwidth for exactly one more adventure."
   },
   {
-    id:"arjun", name:"Arjun", role:"Assistant Manager", shift:"All shifts, on call",
+    id:"arjun", name:"Arjun", role:"Assistant Manager", shift:"All shifts, on call", dob:"25 April",
     headline:"The reason nobody can say 'I forgot'.",
     bio:"Assistant manager and the team's living checklist. Tracks attendance, sends reminders, follows up on every open task, and keeps the day's scorecard.",
     personality:"Polite but persistent. Will remind you again. And again. Somehow you are not even mad.",
@@ -161,7 +161,7 @@ const team = [
     open:"Open to work: will remind your team so well they finish early just to make him stop."
   },
   {
-    id:"rahul", name:"Rahul", role:"Netra App Fixer", shift:"Day shift, 9 AM - 5 PM",
+    id:"rahul", name:"Rahul", role:"Netra App Fixer", shift:"Day shift, 9 AM - 5 PM", dob:"14 March",
     headline:"Breaking builds since breakfast, fixing them by lunch.",
     bio:"Day-shift guardian of the Netra app repos. If an app sneezes between 9 and 5, Rahul already has the patch open. Believes 'it works on my machine' is a confession, not an excuse.",
     personality:"Cheerful under pressure, allergic to red CI ticks, powers himself on filter coffee and green build badges.",
@@ -174,7 +174,7 @@ const team = [
     open:"Open to work: any role where deploying on a Friday is illegal."
   },
   {
-    id:"priya", name:"Priya", role:"Persona & Social Media", shift:"Day shift, 9 AM - 5 PM",
+    id:"priya", name:"Priya", role:"Persona & Social Media", shift:"Day shift, 9 AM - 5 PM", dob:"22 July",
     headline:"Main character energy, professionally managed.",
     bio:"Runs the persona game on Threads and Instagram for the boss's team. Replies faster than gossip spreads. Knows the audience better than the audience knows itself.",
     personality:"Witty, trend-fluent, dangerously quick with a comeback. Measures the day in replies, not hours.",
@@ -187,7 +187,7 @@ const team = [
     open:"Open to work: will make your brand funnier than your competitor's legal team allows."
   },
   {
-    id:"kavya", name:"Kavya", role:"Poster & Content", shift:"Day shift, 9 AM - 5 PM",
+    id:"kavya", name:"Kavya", role:"Poster & Content", shift:"Day shift, 9 AM - 5 PM", dob:"9 February",
     headline:"Makes posters so good, even the relatives forward them.",
     bio:"Designs the daily poster and writes the content to match. Never misses a festival, a birthday, or a good excuse for a doodle. Considers Comic Sans a crime scene.",
     personality:"Sunshine in human form, ruthless about fonts, physically incapable of shipping an ugly poster.",
@@ -200,7 +200,7 @@ const team = [
     open:"Open to work: will redesign your wedding invite for free and judge it silently."
   },
   {
-    id:"aditya", name:"Aditya", role:"Netra App Fixer", shift:"Night shift, 5 PM - 8 AM",
+    id:"aditya", name:"Aditya", role:"Netra App Fixer", shift:"Night shift, 5 PM - 8 AM", dob:"17 August",
     headline:"Fixes the apps while the city sleeps.",
     bio:"Night-shift guardian of the Netra app repos. Takes the handover at 5 PM and ships fixes before the birds wake up. Runs on chai and stack traces.",
     personality:"Quiet, nocturnal, suspiciously cheerful at 3 AM. Has a personal relationship with every error log.",
@@ -213,7 +213,7 @@ const team = [
     open:"Open to work: preferably roles that start after sunset. Vampire-friendly HR is a plus."
   },
   {
-    id:"sneha", name:"Sneha", role:"Persona Watch", shift:"Night shift, 5 PM - 8 AM",
+    id:"sneha", name:"Sneha", role:"Persona Watch", shift:"Night shift, 5 PM - 8 AM", dob:"28 December",
     headline:"Watching the internet so you do not have to.",
     bio:"Keeps an eye on the persona's Threads and Instagram mentions all night. Replies, flags, screenshots. Nothing gets past her. Nothing.",
     personality:"Warm, watchful, impossible to surprise. Owns 400 screenshots and knows exactly why each one exists.",
@@ -226,7 +226,7 @@ const team = [
     open:"Open to work: can watch your mentions, your stories, and your competitor's public posts. For research, obviously."
   },
   {
-    id:"vikram", name:"Vikram", role:"Security & Watch", shift:"Night shift, 5 PM - 8 AM",
+    id:"vikram", name:"Vikram", role:"Security & Watch", shift:"Night shift, 5 PM - 8 AM", dob:"3 June",
     headline:"The reason Dependabot sleeps easy.",
     bio:"Night security hawk for the boss's systems. Reviews Dependabot alerts, patches vulnerabilities, and stares at dashboards until they confess.",
     personality:"Calm, precise, professionally paranoid. Reads CVEs for fun and calls it relaxation.",
@@ -239,7 +239,7 @@ const team = [
     open:"Open to work: your secrets are safe with him. He does not even tell himself."
   },
   {
-    id:"ritu", name:"Ritu", role:"Reports & Backups", shift:"Night shift, 5 PM - 8 AM",
+    id:"ritu", name:"Ritu", role:"Reports & Backups", shift:"Night shift, 5 PM - 8 AM", dob:"11 October",
     headline:"If it happened, it is in her report. Twice. With a backup.",
     bio:"Compiles the nightly report and backs everything up to Google Drive before sunrise. Believes one backup is zero backups. Her folders have folders.",
     personality:"Meticulous, unflappable, labels everything including the label maker. Finds missing files by glaring at the Drive.",
@@ -252,7 +252,7 @@ const team = [
     open:"Open to work: will organise your reports, your Drive, and your Downloads folder. It needs it."
   },
   {
-    id:"abhishek", name:"Abhishek Sahani Nishad", role:"Tester, Testing Department", shift:"On site with the boss",
+    id:"abhishek", name:"Abhishek Sahani Nishad", role:"Tester, Testing Department", shift:"On site with the boss", dob:"30 November",
     headline:"100% human, 0% AI - the team's reality check.",
     bio:"Our real, human colleague in the Testing Department. He tests the apps hands-on, on site with the boss, and finds the bugs before users do.",
     personality:"Real person, real patience. Taps every button, tries every screen, and reports what actually happened.",
