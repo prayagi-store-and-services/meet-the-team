@@ -85,7 +85,7 @@
 <div class="wrap">
 
   <div class="disclosure">
-    <strong>Full disclosure:</strong> The owner (<strong>Deepak Kushwaha</strong>), the co-founder (<strong>Netra</strong>) and <strong>Abhishek Sahani Nishad</strong> are <strong>real people</strong> (marked Human staff, real photos). The other 9 team members on this page are <strong>fictional AI personas</strong> and their photos are <strong>AI-generated</strong> - those personas do not exist. The work in the AI profiles - app fixes, social media, posters, security watch, reports and backups - is the real work done for the business. Think of this as our team page, with honesty and a sense of humour.
+    <strong>Full disclosure:</strong> The owner (<strong>Deepak Kushwaha</strong>) and <strong>Abhishek Sahani Nishad</strong> are <strong>real people</strong> (marked Human staff, real photos). The 9 assistant personas on this page are <strong>fictional AI personas</strong> and their photos are <strong>AI-generated</strong> - those personas do not exist, and their birthdays are fictional too. The work in the AI profiles - app fixes, social media, posters, security watch, reports and backups - is the real work done for the business. Think of this as our team page, with honesty and a sense of humour.
   </div>
 
   <section class="company" id="company">
@@ -136,7 +136,7 @@ const team = [
   },
   {
     id:"founder", name:"Netra", role:"Co-founder", shift:"",
-    human:true
+    plain:true
   },
   {
     id:"netra", name:"Netra", role:"Team Manager", shift:"All shifts, always", dob:"19 January",
@@ -278,7 +278,7 @@ for (const m of team) {
   card.id = m.id;
   card.innerHTML = `
     <div class="member-head">
-      ${m.human
+      ${(m.human || m.plain)
         ? (m.hasPhoto
             ? `<img src="photo-${m.id}.jpg" alt="Photo of ${m.name}, ${m.role}" loading="lazy">`
             : `<div class="initials" title="No photo yet">${m.name.split(" ").map(w=>w[0]).slice(0,2).join("")}</div>`)
@@ -288,9 +288,11 @@ for (const m of team) {
         <div class="role">${m.role}</div>
         ${m.shift ? `<div class="shift">${m.shift}</div>` : ``}
         ${m.dob ? `<div class="shift">DOB: ${m.dob}</div>` : ``}
-        ${m.human
-          ? `<span class="human-tag">HUMAN STAFF - REAL PERSON</span>`
-          : `<span class="ai-tag">AI PERSONA - AI-GENERATED PHOTO</span>`}
+        ${m.plain
+          ? ``
+          : (m.human
+              ? `<span class="human-tag">HUMAN STAFF - REAL PERSON</span>`
+              : `<span class="ai-tag">AI PERSONA - AI-GENERATED PHOTO</span>`)}
       </div>
     </div>
     ${m.headline ? `<p class="headline">"${m.headline}"</p>` : ``}
