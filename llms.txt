@@ -1,0 +1,7 @@
+# Meet the Team - Prayagi Store & Services
+
+> Company profile and team page of Prayagi Store and Services (developer: Deepak Kushwaha), maker of the Netra Ecosystem apps.
+
+## Pages
+- [Meet the Team](https://prayagi-store-and-services.github.io/meet-the-team/)
+- [Join](https://prayagi-store-and-services.github.io/meet-the-team/join.html)
