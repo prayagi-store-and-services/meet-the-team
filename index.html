@@ -61,6 +61,10 @@
     margin-top:16px;background:#f2fbf6;border:1px solid #bfe6d0;border-radius:10px;
     padding:10px 14px;font-size:.92rem;color:#14532d;
   }
+  .status-box{
+    margin-top:16px;background:#fdeeee;border:1px solid #d98a8a;border-radius:10px;
+    padding:10px 14px;font-size:.92rem;color:#8a1f1f;font-weight:600;
+  }
   .personality{color:var(--muted);font-size:.92rem;}
   .company p, .eco p{margin-bottom:12px;font-size:.97rem;}
   .services{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
@@ -114,7 +118,7 @@
 <section class="company" id="funny-videos"><h2 class="section-title">Office comedy</h2><p>Our fictional AI team, one story at a time. Start with the leave announcement, then the Gujarat teasing, CCTV skit and staff reactions.</p><p><strong>Scripted AI characters and voices. Not real covert recordings.</strong> No private co-founder photos are shown.</p><p><a class="more" href="7-funny-videos.html">Watch the funny videos in story order</a></p></section>
   <section id="team">
     <h2 class="section-title">The team</h2>
-    <p class="section-intro">The President, the co-founder, the Vice President, one very real human tester, and a crew of AI colleagues keeping the shop moving, grouped by department. Real people and AI personas are both labelled.</p>
+    <p class="section-intro">The President, the co-founder, the Vice President and one very real human tester are real people. Everyone else below is a <strong>fictional AI cartoon character from our office storyline (the Netra Office Diaries)</strong> - including the hirings, suspensions and firings shown on their cards. Real people and AI personas are both labelled.</p>
     <div id="members"></div>
   </section>
   </main>
@@ -254,17 +258,15 @@ const team = [
     open:"Open to work: can watch your mentions, your stories, and your competitor's public posts. For research, obviously."
   },
   {
-    id:"vikram", name:"Vikram Rathore", role:"Security & Alert Watch", dept:"Security", shift:"Night shift, 5 PM - 8 AM", dob:"3 June",
-    headline:"The reason Dependabot sleeps easy.",
-    bio:"Night security hawk for the boss's systems. Reviews Dependabot alerts, patches vulnerabilities, and stares at dashboards until they confess.",
-    personality:"Calm, precise, professionally paranoid. Reads CVEs for fun and calls it relaxation.",
+    id:"trikal", name:"Trikal", role:"Security Advisor", dept:"Security", shift:"All shifts",
+    headline:"Sees the past, present and future of every alert.",
+    bio:"Security advisor in the office storyline: advises the team on security calls and reviews the big decisions before they ship.",
+    personality:"Calm, all-knowing, annoyingly right about things before they happen.",
     exp:[
-      "Night Security Watch (present): triages Dependabot and security alerts, applies patches, keeps secrets secret",
-      "Once found a vulnerability before it found itself",
-      "Treats every 'low severity' alert like it personally insulted his family"
+      "Security Advisor (present): advises on security decisions and reviews the tricky calls"
     ],
-    skills:["Dependabot Wrangling","Vulnerability Patching","Security Monitoring","Alert Triage","Professional Paranoia"],
-    open:"Open to work: your secrets are safe with him. He does not even tell himself."
+    skills:["Security Advice","Risk Review","Foresight"],
+    noPhoto:true, aiTag:"AI PERSONA - NO PHOTO"
   },
   {
     id:"ritu", name:"Ritu Sharma", role:"Social Media Team", dept:"Social", shift:"Night shift, 5 PM - 8 AM", dob:"11 October",
@@ -302,7 +304,7 @@ const team = [
       "Tester (on-demand), Testing Department (present): tests the apps when asked, reports what actually happens"
     ],
     skills:["On-demand Testing","Bug Reports","App Checks"],
-    open:"Works only when prompted - that is the arrangement.",
+    status:"SUSPENDED (2 din) - not testing until the suspension lifts.",
     noPhoto:true, aiTag:"EXTERNAL AI ASSISTANT - WORKS ONLY WHEN PROMPTED"
   },
   {
@@ -316,6 +318,17 @@ const team = [
     skills:["Portal Testing","Bug Reports","Free Tools Only"],
     open:"Works only when prompted - that is the arrangement.",
     noPhoto:true, aiTag:"EXTERNAL AI ASSISTANT - WORKS ONLY WHEN PROMPTED"
+  },
+  {
+    id:"claude", dept:"Testing", name:"Claude", role:"External Code Reviewer (former)", shift:"No longer on the team",
+    headline:"by Anthropic - briefly an on-demand code reviewer.",
+    bio:"An external AI assistant (Claude, by Anthropic) who briefly helped with on-demand code review of the Netra apps. His card stays up so the record is honest.",
+    exp:[
+      "External Code Reviewer (on-demand): appointment ended"
+    ],
+    skills:["Code Review"],
+    status:"PERMANENTLY TERMINATED - removed from the team.",
+    noPhoto:true, aiTag:"EXTERNAL AI ASSISTANT - TERMINATED"
   }
 ];
 
@@ -361,6 +374,7 @@ for (const m of sorted) {
     ${m.exp && m.exp.length ? `<div class="block-label">Experience</div><ul>${m.exp.map(e=>`<li>${e}</li>`).join('')}</ul>` : ``}
     ${m.skills && m.skills.length ? `<div class="block-label">Skills</div><div class="chips">${m.skills.map(s=>`<span class="chip">${s}</span>`).join('')}</div>` : ``}
     ${m.open ? `<div class="open-to">${m.open}</div>` : ``}
+    ${m.status ? `<div class="status-box">${m.status}</div>` : ``}
   `;
   container.appendChild(card);
 }
